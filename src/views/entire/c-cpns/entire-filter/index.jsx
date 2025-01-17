@@ -1,0 +1,42 @@
+import React, { memo, useState } from 'react'
+import { FilterWrapper } from './style'
+import filterData from '@/assets/data/filter_data.json'
+import classNames from 'classnames'
+
+const EntireFilter = memo(() => {
+  const [selectItmes, setSelectItems] = useState([])
+
+  function itemClickHandle(item) {
+    const newItems = [...selectItmes]
+    if (newItems.includes(item)) { // 移除操作
+      const itemIndex = newItems.findIndex(filterItem => filterItem === item)
+      newItems.splice(itemIndex, 1)
+    } else { // 添加操作
+      newItems.push(item)
+    }
+
+    setSelectItems(newItems) // 用新的数组替换旧的数组
+  }
+
+  return (
+    <FilterWrapper>
+      <div className="filter">
+        {
+          filterData.map(item => {
+            return (
+              <div 
+                className={classNames('item', { active: selectItmes.includes(item) })} 
+                key={item}
+                onClick={e => itemClickHandle(item)}
+              >
+                {item}
+              </div>
+            )
+          }) 
+        }
+      </div>
+    </FilterWrapper>
+  )
+})
+
+export default EntireFilter
