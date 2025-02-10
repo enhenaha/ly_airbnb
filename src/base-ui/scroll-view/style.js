@@ -15,7 +15,7 @@ export const ViewWrapper = styled.div`
 
   .control {
     position: absolute;
-    z-index: 9;
+    z-index: 8;
     display: flex;
     justify-content: center;
     align-items: center;

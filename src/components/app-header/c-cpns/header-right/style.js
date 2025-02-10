@@ -17,6 +17,8 @@ export const RightWrapper = styled.div`
 
   .btns {
     display: flex;
+    color: ${props => props.theme.isAlpha ? "#fff": props.theme.text.primaryColor};
+    /* 前面这个props.theme是包住AppHeader父组件的 ThemeProvider组件上的theme属性的属性值。 后面这个props.theme是包住App根组件ThemeProvider组件上的theme属性的属性值。 这里会采用就近原则的, 因为这个项目中使用到了两个ThemeProvider, 那么当获取ThemeProvider组件上的theme属性的属性值时, 就会使用离当前组件最近的那个, 如果没有则再找另外一个ThemeProvider组件上的theme属性的属性值, 即遵循就近原则。*/
 
     .btn {
       height: 18px;
@@ -27,7 +29,7 @@ export const RightWrapper = styled.div`
       box-sizing: content-box;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: ${props => props.theme.isAlpha ? "rgba(255,255,255,.1)": "#f5f5f5"};;
       }
     }
   }
@@ -69,6 +71,7 @@ export const RightWrapper = styled.div`
       background-color: #fff;
       box-shadow: 0 0 6px rgba(0, 0, 0, .2);
       color: #666;
+      z-index: 9;
 
       .top, .bottom {
         padding: 10px 0;
