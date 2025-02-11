@@ -1,12 +1,5 @@
 import styled from 'styled-components'
 
-const boxShadow = `
-  transition: box-shadow 200ms ease;
-  &:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .18);
-  }
-`
-
 export const RightWrapper = styled.div`
   flex: 1;
   display: flex;
