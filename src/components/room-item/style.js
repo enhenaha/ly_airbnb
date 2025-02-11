@@ -13,7 +13,7 @@ export const ItemWrapper = styled.div`
   .cover {
     position: relative;
     box-sizing: border-box;
-    padding-top: 66.66%; // padding的百分比是相对于父元素的宽度width的。
+    padding-top: 66.66%;
     border-radius: 3px;
     overflow: hidden;
 
@@ -127,7 +127,7 @@ export const ItemWrapper = styled.div`
       margin: 0 2px 0 4px;
     }
 
-    .MuiRating-icon { // 这是给Rating组件中的类名为MuiRating-icon的元素设置的css样式, 注意: 在一个组件中使用另外一个组件时, 可以直接给该组件设置css样式。 也就是父组件可以直接给子组件设置css样式, 这个在styled-components中是允许的。(在这里是RoomItem组件中使用Rating组件, 但是在RoomItem组件中设置Rating组件的css样式)
+    .MuiRating-icon {
       margin-right: -2px;
     }
   }

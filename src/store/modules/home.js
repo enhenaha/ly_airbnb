@@ -2,7 +2,6 @@ import { getHomeDiscountData, getHomeGoodPriceData, getHomeHighScoreData, getHom
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchHomeDataAction = createAsyncThunk("fetchdata", (extraInfo, { dispatch }) => {
-  // 这里不用async、await的原因是, 防止某个网络请求必须等上一个网络请求获取到数据之后才发送。也就是为了保证所有网络请求之间都是独立的, 不会互相影响, 不用说第二个网络请求必须等第一个网络请求返回数据后才能发送。
 
   getHomeGoodPriceData().then(res => {
     dispatch(changeGoodPriceInfoAction(res))
@@ -54,11 +53,6 @@ const homeSlice = createSlice({
       state.plusInfo = payload
     }
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(fetchHomeDataAction.fulfilled, (state, { payload }) => {
-  //     state.goodPriceInfo = payload
-  //   })
-  // }
 })
 
 export const { 

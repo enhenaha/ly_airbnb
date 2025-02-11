@@ -8,14 +8,14 @@ const EntireFilter = memo(() => {
 
   function itemClickHandle(item) {
     const newItems = [...selectItmes]
-    if (newItems.includes(item)) { // 移除操作
+    if (newItems.includes(item)) {
       const itemIndex = newItems.findIndex(filterItem => filterItem === item)
       newItems.splice(itemIndex, 1)
-    } else { // 添加操作
+    } else {
       newItems.push(item)
     }
 
-    setSelectItems(newItems) // 用新的数组替换旧的数组
+    setSelectItems(newItems)
   }
 
   return (

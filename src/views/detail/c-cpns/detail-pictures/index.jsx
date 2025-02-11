@@ -4,10 +4,8 @@ import { shallowEqual, useSelector } from 'react-redux'
 import PictureBrowser from '@/base-ui/picture-browser'
 
 const DetailPictures = memo(() => {
-  /* 定义组件内部的状态 */
   const [ showBrowser, setShowBrowser ] = useState(false)
 
-  /* 从redux中获取数据 */
   const { detailInfo } = useSelector(state => ({
     detailInfo: state.detail.detailInfo
   }), shallowEqual)

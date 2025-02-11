@@ -1,11 +1,11 @@
 const theme = {
   color: {
-    primaryColor: "#ff385c", // 红色
-    secondaryColor: '#00848A' // 绿色
+    primaryColor: "#ff385c",
+    secondaryColor: '#00848A'
   },
   text: {
-    primaryColor: '#484848', // 浅黑
-    secondaryColor: '#222' // 深黑
+    primaryColor: '#484848',
+    secondaryColor: '#222'
   },
   mixin: {
     boxShadow: `

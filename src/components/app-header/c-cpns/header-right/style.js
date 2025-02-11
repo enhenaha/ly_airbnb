@@ -18,8 +18,7 @@ export const RightWrapper = styled.div`
   .btns {
     display: flex;
     color: ${props => props.theme.isAlpha ? "#fff": props.theme.text.primaryColor};
-    /* 前面这个props.theme是包住AppHeader父组件的 ThemeProvider组件上的theme属性的属性值。 后面这个props.theme是包住App根组件ThemeProvider组件上的theme属性的属性值。 这里会采用就近原则的, 因为这个项目中使用到了两个ThemeProvider, 那么当获取ThemeProvider组件上的theme属性的属性值时, 就会使用离当前组件最近的那个, 如果没有则再找另外一个ThemeProvider组件上的theme属性的属性值, 即遵循就近原则。*/
-
+   
     .btn {
       height: 18px;
       line-height: 18px;
@@ -46,21 +45,10 @@ export const RightWrapper = styled.div`
     border: 1px solid #ccc;
     border-radius: 25px;
     background-color: #fff;
-    color: ${props => props.theme.text.primaryColor}; // 用于设置右上角的 '三条横杠'和'用户头像'的颜色。
+    color: ${props => props.theme.text.primaryColor}; 
     cursor: pointer;
 
-    /* 写法一: 直接将css样式写到这里 */
-    /* transition: box-shadow 200ms ease;
-    &:hover {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, .18); // 分别是: x轴偏移, y轴偏移, 扩散, 延申。
-    } */
-
-    /* 写法二: 将css样式抽取到外边, 写成字符串形式, 然后在这里通过 '模板字符串中使用变量'的方式 引入。
-    (至于为什么是字符串的形式? 从内联css就可以看出来了, 例如: <div style="color: red;"></div>, 这里的 'color:red' 整体都是字符串, 因此可以说, css代码在js中就是字符串表示的)
-    */
-    /* ${boxShadow} */
-
-    /* 写法三: 使用 '模板字符串中使用函数' 的方式。 对于styled-components来说, 通过模板字符串调用对应的函数时, 如果在模板字符串中使用函数, 那么这个函数会被自动调用。因此可以写成如下: */
+    
     ${props => props.theme.mixin.boxShadow}
 
     .panel {

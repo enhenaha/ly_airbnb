@@ -10,12 +10,12 @@ export const PicturesWrapper = styled.div`
 
     &:hover {
       .cover {
-        opacity: 1 !important; // 先让所有图片都有遮盖层
+        opacity: 1 !important;
       }
 
       .item:hover {
         .cover {
-          opacity: 0 !important; // 在去除掉被选中的图片的遮盖层
+          opacity: 0 !important;
         }
       }
     }

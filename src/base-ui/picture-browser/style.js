@@ -20,12 +20,7 @@ export const BrowserWrapper = styled.div`
       position: absolute;
       right: 25px;
       cursor: pointer;
-      color: white; // 用于给 svg关闭图标 设置颜色。
-
-      /* img {
-        width: 50px;
-        height: 50px;
-      } */
+      color: white;
     }
   }
 
@@ -72,7 +67,6 @@ export const BrowserWrapper = styled.div`
         user-select: none;
       }
 
-      /* 动画的样式 */
       .pic-enter {
         transform: translateX(${props => props.isNext ? "100%": '-100%'});
         opacity: 0;
@@ -82,13 +76,6 @@ export const BrowserWrapper = styled.div`
         opacity: 1;
         transition: all 200ms ease;
       }
-      /* .pic-exit {
-        opacity: 1;
-      }
-      .pic-exit-active {
-        opacity: 0;
-        transition: opacity 200ms ease;
-      } */
     }
   }
 

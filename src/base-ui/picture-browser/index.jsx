@@ -17,17 +17,15 @@ const PictureBrowser = memo((props) => {
   const imgRef = useRef();
   const [showList, setShowList] = useState(true)
 
-  // 当图片浏览器展示出来时, 滚动的功能消失
+
   useEffect(() => {
-    document.body.style.overflow = "hidden"; // 超出body高度隐藏(body高度默认就是浏览器视口的高度)
+    document.body.style.overflow = "hidden";
 
     return () => {
-      // 当前组件被卸载前会执行这里返回的回调函数, 也就是图片浏览器被关闭时(当前组件就会被卸载), 这里返回的回调函数就会被执行, 因此就会恢复页面滚动功能。
-      document.body.style.overflow = "auto"; // overflow属性默认值就是auto, 也就是超出body高度时显示滚动条。这里是恢复原样。
+      document.body.style.overflow = "auto";
     };
   }, []);
 
-  /* 事件监听的逻辑 */
   function closeBtnClickHandle() {
     if (closeClick) closeClick();
   }
@@ -50,7 +48,6 @@ const PictureBrowser = memo((props) => {
     <BrowserWrapper isNext={isNext} showList={showList}>
       <div className="top">
         <div className="close-btn" onClick={closeBtnClickHandle}>
-          {/* <img src={require("@/assets/img/error.png")} alt="" /> */}
           <IconClose width="50" height="50"/>
         </div>
       </div>
