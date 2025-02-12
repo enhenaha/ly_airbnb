@@ -10,7 +10,6 @@ const App = memo(() => {
 
   return (
     <div className='app'>
-      <h2>你好啊，李银河!</h2>
       <Suspense fallback="loading">
         <div className="page">
           {useRoutes(routes)}
